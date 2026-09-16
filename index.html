@@ -97,13 +97,18 @@ footer strong{color:var(--gold)}
 <div class="title"><h2>Featured Shop</h2><p>Product prices and availability can change. Message us to confirm before payment.</p></div>
 <div class="shopbar">
 <button class="filter active" onclick="filterProducts('all',this)">All</button>
+<button class="filter" onclick="filterProducts('rituals',this)">Rituals</button>
 <button class="filter" onclick="filterProducts('accessories',this)">Accessories</button>
 <button class="filter" onclick="filterProducts('clothes',this)">Clothes</button>
 <button class="filter" onclick="filterProducts('bags',this)">Bags</button>
 <button class="filter" onclick="filterProducts('shoes',this)">Shoes</button>
 <button class="filter" onclick="filterProducts('hairs',this)">Hairs</button>
 </div>
-<div class="products">
+<div class="products" id="products"></div>
+    </section>
+
+<section class="wrap">
+<div class="title"><h2>Why Shop With Us?</h2>
 <article class="product" data-cat="accessories"><div class="photo">💎</div><div class="info"><span class="tag">Accessories</span><h3>New Accessories</h3><div class="price">Ask for price</div><p class="note">Send us a message for current designs.</p><a class="order" href="https://wa.me/2347039205796?text=Hello,%20I%27m%20interested%20in%20your%20accessories.">Order Now</a></div></article><article class="product" data-cat="clothes"><div class="photo">👗</div><div class="info"><span class="tag">Clothes</span><h3>Fashion Clothes</h3><div class="price">Ask for price</div><p class="note">Check available sizes and styles.</p><a class="order" href="https://wa.me/2347039205796?text=Hello,%20I%27m%20interested%20in%20your%20clothes.">Order Now</a></div></article><article class="product" data-cat="bags"><div class="photo">👜</div><div class="info"><span class="tag">Bags</span><h3>Stylish Bags</h3><div class="price">Ask for price</div><p class="note">Message us for available bags.</p><a class="order" href="https://wa.me/2347039205796?text=Hello,%20I%27m%20interested%20in%20your%20bags.">Order Now</a></div></article><article class="product" data-cat="shoes"><div class="photo">👟</div><div class="info"><span class="tag">Shoes</span><h3>Fashion Shoes</h3><div class="price">Ask for price</div><p class="note">Check sizes and available designs.</p><a class="order" href="https://wa.me/2347039205796?text=Hello,%20I%27m%20interested%20in%20your%20shoes.">Order Now</a></div></article><article class="product" data-cat="hairs"><div class="photo">💇🏽‍♀️</div><div class="info"><span class="tag">Hairs</span><h3>Quality Hairs</h3><div class="price">Ask for price</div><p class="note">Message us for current options.</p><a class="order" href="https://wa.me/2347039205796?text=Hello,%20I%27m%20interested%20in%20your%20hairs.">Order Now</a></div></article><article class="product" data-cat="accessories"><div class="photo">🕶️</div><div class="info"><span class="tag">Accessories</span><h3>Fashion Accessories</h3><div class="price">Ask for price</div><p class="note">New items added regularly.</p><a class="order" href="https://wa.me/2347039205796?text=Hello,%20I%27m%20interested%20in%20your%20accessories.">Order Now</a></div></article><article class="product" data-cat="bags"><div class="photo">👝</div><div class="info"><span class="tag">Bags</span><h3>Luxury Bags</h3><div class="price">Ask for price</div><p class="note">Ask about colours and designs.</p><a class="order" href="https://wa.me/2347039205796?text=Hello,%20I%27m%20interested%20in%20your%20bags.">Order Now</a></div></article><article class="product" data-cat="clothes"><div class="photo">👚</div><div class="info"><span class="tag">Clothes</span><h3>New Arrivals</h3><div class="price">Ask for price</div><p class="note">Send a message to see what is available.</p><a class="order" href="https://wa.me/2347039205796?text=Hello,%20I%27m%20interested%20in%20your%20new%20clothes.">Order Now</a></div></article>
 </div>
 </section>
@@ -148,5 +153,92 @@ p.style.display=(cat==='all'||p.dataset.cat===cat)?'block':'none';
 });
 }
 </script>
+const products = {
+  accessories: [
+    "IMG_9547.jpeg","IMG_9548.jpeg","IMG_9549.jpeg","IMG_9550.jpeg",
+    "IMG_9551.jpeg","IMG_9552.jpeg","IMG_9554.jpeg","IMG_9557.jpeg",
+    "IMG_9558.jpeg","IMG_9559.jpeg","IMG_9560.jpeg","IMG_9562.jpeg",
+    "IMG_9563.jpeg","IMG_9566.jpeg","IMG_9568.jpeg","IMG_9577.jpeg",
+    "IMG_9580.jpeg","IMG_9607.jpeg","IMG_9608.jpeg","IMG_9609.jpeg",
+    "IMG_9611.jpeg","IMG_9613.jpeg","IMG_9623.jpeg","IMG_9624.jpeg",
+    "IMG_9625.jpeg","IMG_9626.jpeg","IMG_9632.jpeg","IMG_9633.jpeg",
+    "IMG_9634.jpeg"
+  ],
+
+  rituals: [
+    "IMG_9553.jpeg","IMG_9555.jpeg","IMG_9556.jpeg","IMG_9567.jpeg",
+    "IMG_9571.jpeg","IMG_9572.jpeg","IMG_9610.jpeg","IMG_9612.jpeg",
+    "IMG_9614.jpeg","IMG_9615.jpeg","IMG_9616.jpeg","IMG_9617.jpeg",
+    "IMG_9618.jpeg","IMG_9619.jpeg","IMG_9620.jpeg","IMG_9621.jpeg",
+    "IMG_9622.jpeg","IMG_9627.jpeg","IMG_9628.jpeg","IMG_9629.jpeg",
+    "IMG_9630.jpeg","IMG_9631.jpeg","IMG_9636.jpeg"
+  ],
+
+  hairs: [
+    "IMG_9561.jpeg","IMG_9570.jpeg","IMG_9573.jpeg",
+    "IMG_9575.jpeg","IMG_9576.jpeg"
+  ],
+
+  clothes: [
+    "IMG_9564.jpeg","IMG_9565.jpeg","IMG_9569.jpeg","IMG_9606.jpeg",
+    "IMG_9637.jpeg","IMG_9638.jpeg","IMG_9639.jpeg","IMG_9640.jpeg",
+    "IMG_9641.jpeg","IMG_9642.jpeg","IMG_9643.jpeg","IMG_9644.jpeg",
+    "IMG_9645.jpeg","IMG_9646.jpeg","IMG_9647.jpeg","IMG_9648.jpeg",
+    "IMG_9649.jpeg"
+  ],
+
+  shoes: [
+    "IMG_9578.jpeg","IMG_9579.jpeg","IMG_9591.jpeg","IMG_9592.jpeg",
+    "IMG_9593.jpeg","IMG_9594.jpeg","IMG_9595.jpeg","IMG_9596.jpeg",
+    "IMG_9597.jpeg","IMG_9598.jpeg","IMG_9599.jpeg","IMG_9600.jpeg",
+    "IMG_9601.jpeg","IMG_9602.jpeg","IMG_9603.jpeg","IMG_9604.jpeg",
+    "IMG_9605.jpeg"
+  ],
+
+  bags: [
+    "IMG_9582.jpeg","IMG_9583.jpeg","IMG_9584.jpeg","IMG_9585.jpeg",
+    "IMG_9586.jpeg","IMG_9587.jpeg","IMG_9588.jpeg","IMG_9589.jpeg",
+    "IMG_9590.jpeg"
+  ]
+};
+
+const categoryNames = {
+  accessories: "Accessories",
+  rituals: "Rituals",
+  hairs: "Hairs",
+  clothes: "Clothes",
+  shoes: "Shoes",
+  bags: "Bags"
+};
+
+function displayProducts() {
+  const container = document.getElementById("products");
+  container.innerHTML = "";
+
+  Object.keys(products).forEach(cat => {
+    products[cat].forEach((image, index) => {
+      container.innerHTML += `
+        <article class="product" data-cat="${cat}">
+          <div class="photo">
+            <img src="${image}" alt="${categoryNames[cat]} product ${index + 1}"
+              style="width:100%;height:260px;object-fit:cover;border-radius:14px;">
+          </div>
+          <div class="info">
+            <span class="tag">${categoryNames[cat]}</span>
+            <h3>${categoryNames[cat]} ${index + 1}</h3>
+            <div class="price">Ask for price</div>
+            <p class="note">Message us for availability and details.</p>
+            <a class="order"
+              href="https://wa.me/2347039205796?text=Hello,%20I'm%20interested%20in%20your%20${categoryNames[cat].toLowerCase()}.">
+              Order Now
+            </a>
+          </div>
+        </article>
+      `;
+    });
+  });
+}
+
+displayProducts();
 </body>
 </html>
