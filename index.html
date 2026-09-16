@@ -145,14 +145,6 @@ footer strong{color:var(--gold)}
 <footer><strong>ADE EVERYTHING LUXURY</strong><br>Everything wholesales and affordable<br><br>© 2026 ADE EVERYTHING LUXURY • Sijuade, Akure</footer>
 
 <script>
-function filterProducts(cat,button){
-document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
-button.classList.add('active');
-document.querySelectorAll('.product').forEach(p=>{
-p.style.display=(cat==='all'||p.dataset.cat===cat)?'block':'none';
-});
-}
-</script>
 const products = {
   accessories: [
     "IMG_9547.jpeg","IMG_9548.jpeg","IMG_9549.jpeg","IMG_9550.jpeg",
@@ -240,5 +232,13 @@ function displayProducts() {
 }
 
 displayProducts();
+function filterProducts(cat,button){
+document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
+button.classList.add('active');
+document.querySelectorAll('.product').forEach(p=>{
+p.style.display=(cat==='all'||p.dataset.cat===cat)?'block':'none';
+});
+}
+</script>
 </body>
 </html>
